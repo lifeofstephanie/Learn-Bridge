@@ -50,6 +50,8 @@
     "react-native-video": "^6.10.1",
     "react-native-webview": "13.12.5",
     "realm": "^20.1.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7",
     "tailwind-react-native-classnames": "^1.5.1",
     "uuid": "^11.1.0"
   },

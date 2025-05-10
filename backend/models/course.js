@@ -1,20 +1,16 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/database');
 
-const Article = sequelize.define('Article', {
+const Course = sequelize.define('Course', {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  content: {
+  description: {
     type: DataTypes.TEXT,
-    allowNull: false,
-  },
-  author: {
-    type: DataTypes.STRING,
   },
 }, {
   timestamps: true,
 });
 
-module.exports = Article;
+module.exports = Course;
