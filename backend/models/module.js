@@ -1,25 +1,19 @@
+// models/moduleModel.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/database');
 const Course = require('./course');
+const Video = require('./videoModel'); 
+
 
 const Module = sequelize.define('Module', {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  description: {
-    type: DataTypes.TEXT,
-  },
-}, {
-  timestamps: true,
+  description: DataTypes.TEXT,
 });
 
-Course.hasMany(Module, {
-  foreignKey: 'course_id',
-  onDelete: 'CASCADE',
-});
-Module.belongsTo(Course, {
-  foreignKey: 'course_id',
-});
+Course.hasMany(Video, { foreignKey: 'VideoId'});
+Module.belongsTo(Course, { foreignKey: 'courseId' });
 
 module.exports = Module;

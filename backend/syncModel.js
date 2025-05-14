@@ -1,12 +1,10 @@
 const sequelize = require('./db/database');
-const Article = require('./models/articleModel');
-const Course = require('./models/course');
-const Module = require('./models/module');
+require('./models/course');
+require('./models/module');
+require('./models/articleModel');
+require('./models/videoModel');
+require('./models/testModel');
 
-sequelize.sync({ alter: true }) 
-  .then(() => {
-    console.log('Database & tables synced');
-  })
-  .catch((err) => {
-    console.error('Sync failed:', err);
-  });
+sequelize.sync({ alter: true }).then(() => {
+  console.log('Database synced');
+}).catch(console.error);
